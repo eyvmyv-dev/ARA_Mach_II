@@ -1,0 +1,44 @@
+{
+    "AIRPORT": {
+        "BHS": {
+            "patterns": ["\\bbhs\\b", "baggage"],
+            "subtypes": {
+                "ATR": ["tag\\s*reader", "\\batr\\b"],
+                "TRANSPORT": ["transport\\s*conveyor"],
+                "MCP": ["control\\s*panel"]
+            }
+        },
+        "PBB": {
+            "patterns": ["\\bpbb\\b", "boarding\\s*bridge"],
+            "subtypes": {
+                "BRIDGE": ["jet\\s*bridge"],
+                "GATE": ["gate\\s*[a-z]\\d+"]
+            }
+        },
+        "GPU": {
+            "patterns": ["\\bgpu\\b", "ground\\s*power"],
+            "subtypes": {
+                "FIXED": ["fixed\\s*gpu", "terminal\\s*power"],
+                "MOBILE": ["mobile\\s*gpu", "portable\\s*power"]
+            }
+        }
+    },
+    "WATER_TREATMENT": {
+        "TREATMENT": {
+            "patterns": ["treatment", "clarifier", "aerator"],
+            "subtypes": {
+                "CLARIFIER": ["clarifier", "settler"],
+                "AERATOR": ["aerator", "diffuser"],
+                "FILTER": ["filter", "membrane"]
+            }
+        },
+        "CHEMICAL": {
+            "patterns": ["chemical", "dosing", "injection"],
+            "subtypes": {
+                "DOSING": ["dosing\\s*pump", "metering\\s*pump"],
+                "STORAGE": ["chemical\\s*tank", "storage\\s*tank"],
+                "INJECTION": ["injection\\s*system", "mixer"]
+            }
+        }
+    }
+}

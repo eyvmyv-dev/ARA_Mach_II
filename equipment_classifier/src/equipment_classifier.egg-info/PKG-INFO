@@ -1,0 +1,126 @@
+Metadata-Version: 2.4
+Name: equipment-classifier
+Version: 0.1.0
+Summary: NLP-based equipment classification system for work order analysis across multiple industries
+Author-email: ARA Mach II <contact@example.com>
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+Requires-Dist: pandas>=2.0.0
+Requires-Dist: scikit-learn>=1.3.0
+Requires-Dist: spacy>=3.7.0
+Requires-Dist: numpy>=1.24.0
+Requires-Dist: pyyaml>=6.0
+Requires-Dist: openpyxl>=3.1.0
+Requires-Dist: nltk>=3.8.1
+Requires-Dist: textdistance>=4.6.0
+Provides-Extra: dev
+Requires-Dist: pytest>=7.4.0; extra == "dev"
+Requires-Dist: pytest-cov>=4.1.0; extra == "dev"
+Requires-Dist: black>=23.0.0; extra == "dev"
+Requires-Dist: flake8>=6.0.0; extra == "dev"
+Requires-Dist: mypy>=1.5.0; extra == "dev"
+Requires-Dist: jupyter>=1.0.0; extra == "dev"
+
+# Equipment Classifier
+
+A modular NLP-based system for classifying equipment from work order descriptions across multiple industries.
+
+## Features
+
+- **Multi-Industry Support**: Airport, Chemical Processing, Manufacturing, Water/Wastewater
+- **NLP Processing**: Advanced text preprocessing and pattern recognition
+- **Confidence Scoring**: Reliability metrics for each classification
+- **Claude Skill Ready**: Designed for integration with Claude Skills
+- **Extensible**: Easy to add new industries and equipment types
+
+## Installation
+
+```bash
+# Clone the repository
+cd equipment_classifier
+
+# Install dependencies
+pip install -e .
+
+# Install development dependencies
+pip install -e ".[dev]"
+```
+
+## Quick Start
+
+```python
+from equipment_classifier import EquipmentClassifier
+
+# Initialize for airport industry
+classifier = EquipmentClassifier(industry="AIRPORT")
+
+# Classify equipment from description
+result = classifier.classify("AHU 4.13 maintenance required")
+print(f"Equipment: {result.equipment_type}")
+print(f"Confidence: {result.confidence:.2f}")
+```
+
+## Project Structure
+
+```
+equipment_classifier/
+├── src/
+│   ├── core/                # Core classification logic
+│   ├── nlp/                 # NLP processing components
+│   ├── industry/            # Industry-specific modules
+│   └── utils/               # Utility functions
+├── tests/                   # Comprehensive test suite
+├── notebooks/               # Development and examples
+├── data/                    # Training data and patterns
+└── config/                  # Configuration files
+```
+
+## Industries Supported
+
+- **AIRPORT**: Air handling units, baggage systems, security equipment
+- **CHEMICAL**: Process equipment, reactors, pumps, safety systems
+- **MANUFACTURING**: Production equipment, conveyors, assembly systems
+- **WATER**: Treatment systems, pumps, filtration equipment
+
+## Development
+
+```bash
+# Run tests
+pytest
+
+# Format code
+black src/ tests/
+
+# Type checking
+mypy src/
+
+# Run example notebook
+jupyter notebook notebooks/examples.ipynb
+```
+
+## Claude Skill Integration
+
+This classifier is designed as a stateless component that can be easily integrated into Claude Skills:
+
+```python
+# Simple classification interface
+def classify_equipment(description: str, industry: str = "AIRPORT") -> dict:
+    classifier = EquipmentClassifier(industry=industry)
+    result = classifier.classify(description)
+    return {
+        "equipment_type": result.equipment_type,
+        "confidence": result.confidence,
+        "context": result.context
+    }
+```
+
+## License
+
+MIT License - see LICENSE file for details.

@@ -1,0 +1,52 @@
+{
+    "ROTATING_EQUIPMENT": {
+        "patterns": ["pump", "motor", "fan", "compressor", "blower"],
+        "subtypes": {
+            "PUMP": ["pump", "dosing", "metering"],
+            "FAN": ["fan", "ventilation", "blower"],
+            "COMPRESSOR": ["compressor", "air\\s*system"],
+            "MOTOR": ["motor", "drive"]
+        }
+    },
+    "PROCESS_EQUIPMENT": {
+        "patterns": ["tank", "vessel", "reactor", "filter"],
+        "subtypes": {
+            "TANKS": ["tank", "vessel", "container"],
+            "REACTORS": ["reactor", "process\\s*vessel"],
+            "FILTERS": ["filter", "strainer", "separator"]
+        }
+    },
+    "HVAC": {
+        "patterns": ["hvac", "conditioning", "ventilation"],
+        "subtypes": {
+            "AHU": ["ahu", "air\\s*handling"],
+            "RTU": ["rtu", "roof\\s*top"],
+            "CHILLER": ["chiller", "cooling\\s*system"],
+            "BOILER": ["boiler", "heating\\s*system"]
+        }
+    },
+    "ELECTRICAL": {
+        "patterns": ["electrical", "power", "switchgear"],
+        "subtypes": {
+            "SWITCHGEAR": ["switchgear", "switch\\s*board"],
+            "TRANSFORMER": ["transformer", "xfmr"],
+            "PANEL": ["panel", "mcc", "distribution"]
+        }
+    },
+    "CONVEYANCE": {
+        "patterns": ["conveyor", "elevator", "lift"],
+        "subtypes": {
+            "CONVEYOR": ["conveyor", "belt", "chain"],
+            "ELEVATOR": ["elevator", "lift"],
+            "CRANE": ["crane", "hoist"]
+        }
+    },
+    "INSTRUMENTATION": {
+        "patterns": ["instrument", "sensor", "gauge", "meter"],
+        "subtypes": {
+            "SENSORS": ["sensor", "transmitter", "probe"],
+            "METERS": ["meter", "gauge", "indicator"],
+            "ANALYZERS": ["analyzer", "monitor"]
+        }
+    }
+}

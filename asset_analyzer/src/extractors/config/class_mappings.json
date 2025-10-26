@@ -1,0 +1,95 @@
+{
+    "mappings": {
+        "EQUIPMEN": {
+            "patterns": {
+                "WATER": [
+                    "water.*fountain",
+                    "drinking.*water",
+                    "fountain"
+                ],
+                "HVAC": [
+                    "rtu",
+                    "\\bac\\b",
+                    "air.*condition",
+                    "hvac",
+                    "\\bahu",
+                    "air.*handling",
+                    "cooling.*tower",
+                    "chiller"
+                ],
+                "CONVEYOR": [
+                    "conveyor",
+                    "belt",
+                    "escalator"
+                ],
+                "PUMP": [
+                    "pump",
+                    "motor",
+                    "compressor"
+                ],
+                "ELECTRICAL": [
+                    "electrical",
+                    "panel",
+                    "transformer"
+                ],
+                "PROCESS": [
+                    "grease.*trap",
+                    "filter",
+                    "compactor",
+                    "trash.*compactor"
+                ],
+                "SAFETY": [
+                    "fire.*ext",
+                    "alarm",
+                    "emergency"
+                ]
+            },
+            "default": "EQUIPMENT"
+        },
+        "FAC": {
+            "patterns": {
+                "HVAC": [
+                    "rtu",
+                    "\\bac\\b",
+                    "air.*condition",
+                    "hvac",
+                    "\\bahu",
+                    "air.*handling",
+                    "cooling.*tower",
+                    "chiller"
+                ],
+                "PLUMBING": [
+                    "toilet",
+                    "sink",
+                    "drain",
+                    "water"
+                ],
+                "ELECTRICAL": [
+                    "electrical",
+                    "lighting",
+                    "power",
+                    "panel"
+                ],
+                "BUILDING": [
+                    "wall",
+                    "floor",
+                    "ceiling",
+                    "roof"
+                ]
+            },
+            "default": "BUILDING"
+        },
+        "VEH": {
+            "patterns": {
+                "VEHICLE": [
+                    "\\bc-\\d+",
+                    "ford",
+                    "gmc",
+                    "truck",
+                    "vehicle"
+                ]
+            },
+            "default": "VEHICLE"
+        }
+    }
+}
